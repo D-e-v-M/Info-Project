@@ -8,7 +8,7 @@
  });
 
 async function loadMenu (){
-    let response= await fetch("https://api.sheety.co/64eabdcf4c7f902b38c556d10791c81e/foodHut/sheet1");
+    let response= await fetch("https://api.sheety.co/a26f6eb6467c0e619e8a438749f612a5/foodHut/sheet1");
     let data= await response.json();
     let menu=data.sheet1;
     displaymenu(menu);
@@ -121,7 +121,7 @@ function displaymenu(menu){
 }
 
 async function review(name,id){
-    let response= await fetch("https://api.sheety.co/64eabdcf4c7f902b38c556d10791c81e/reviews/sheet1");
+    let response= await fetch("https://api.sheety.co/a26f6eb6467c0e619e8a438749f612a5/reviews/sheet1");
     let data= await response.json();
     let review=data.sheet1;
     let rlisting = document.querySelector(`#${id}`);
@@ -138,7 +138,7 @@ async function review(name,id){
 }
 
 async function getmenu(sname){
-    let response= await fetch("https://api.sheety.co/64eabdcf4c7f902b38c556d10791c81e/foodHut/sheet1");
+    let response= await fetch("https://api.sheety.co/a26f6eb6467c0e619e8a438749f612a5/foodHut/sheet1");
     let data= await response.json();
     let menu=data.sheet1;
     getidcard(menu,sname);
@@ -152,9 +152,9 @@ function getidcard(menu,sname){
         }
     }
     if(cid)
-       location.href = `http://127.0.0.1:8080/public/?action=#cc${cid}`;
+       location.href = `#cc${cid}`;
     else{
-      location.href = "http://127.0.0.1:8080/public/?action=#logo";
+      location.href = "#logo";
       M.toast({html: 'Item does not exist', classes: 'rounded', inDuration:4000});
     }      
 }
